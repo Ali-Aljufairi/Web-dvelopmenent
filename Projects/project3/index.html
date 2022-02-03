@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+    <title>CodePen - FCC: Technical Documentation Page</title>
+  
+</head>
+
+<body translate="no" class="vsc-initialized" data-new-gr-c-s-check-loaded="14.1047.0" data-gr-ext-installed="">
+    <nav id="navbar">
+    <header>VHDL Documentation</header>
+    <ul>
+      <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li>
+        <a class="nav-link" href="#What_you_should_already_know">What you should already know</a>
+      </li>
+      <li>
+        <a class="nav-link" href="#VHDL_and_Verilog">VHDL and Verilog</a>
+      </li>
+      <li><a class="nav-link" href="#Hello_world">Hello world</a></li>
+      <li><a class="nav-link" href="#Variables">Variables</a></li>
+      <li>
+        <a class="nav-link" href="#Declaring_Input_and_output">Declaring Input and output</a>
+      </li>
+      <li><a class="nav-link" href="#Variable_scope">Variable scope</a></li>
+      <li><a class="nav-link" href="#Global_variables">Global variables</a></li>
+      <li><a class="nav-link" href="#Constants">Constants</a></li>
+      <li><a class="nav-link" href="#Data_types">Data types</a></li>
+      <li>
+        <a class="nav-link" href="#if...else_statement">if...else statement</a>
+      </li>
+      <li><a class="nav-link" href="#while_statement">while statement</a></li>
+      <li>
+        <a class="nav-link" href="#Package_declarations">Package declarations</a>
+      </li>
+      <li><a class="nav-link" href="#Reference">Reference</a></li>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="Introduction">
+      <header>Introduction</header>
+      <article>
+        <p>
+            The VHSIC Hardware Description Language is a hardware
+             description language that can model the behavior and structure of 
+             digital systems at multiple levels of abstraction, ranging from the system 
+             level down to that of logic gates, for design entry, documentation, and verification purposes.
+        </p>
+  
+        <p>
+            We utilize VHDL to write
+             text models that describe or express logic circuits. If the text model is
+              part of the logic design, the model is processed by a synthesis program. The next step in the process 
+              incorporates a simulation program to test the logic design. During this step, we utilize the simulation models to 
+              characterize the logic circuits that interface to the design. We refer to this collection of simulation models as a testbench.
+              and we have there a testbench that is used to test the logic design. where we can say that we have three different types of design .
+        </p>
+        <ul>
+          <li>
+            <strong>  Dataflow Style of Modelling:</strong>
+
+            Dataflow style describes a system in terms of how data flows through the system. Data dependencies in the description match those in a typical hardware implementation.
+
+          </li>
+          <li>
+            <strong>Behavioral Style of Modelling:</strong>
+            A behavioral description describes a system’s behavior or function in an algorithmic fashion. The description is not limited to the data flow of the system.
+            Behavioral style is the most abstract style. The description is abstract in the sense that it does not directly imply a particular gate-level implementation.
+            Sequential statements are executed sequentially by a simulator, the same as the execution of sequential statements in a conventional programming language.
+          </li>
+
+          <li>
+            <strong> Structural Style of Modelling:</strong>
+            In structural style of modelling, an entity is described as a set of interconnected components.The top-level design entity’s architecture describes the interconnection of lower-level design entities. 
+            Each lower-level design entity can, in turn, be described as an interconnection of design entities at the next-lower level, and so on.
+            Structural style is most useful and efficient when a complex system is described as an interconnection of moderately complex design entities. 
+            This approach allows each design entity to be independently designed and verified before being used in the higher-level description.
+          </li>
+          
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="What_you_should_already_know">
+      <header>What you should already know</header>
+      <article>
+        <p>This guide assumes you have the following basic background:</p>
+  
+        <ul>
+          <li>
+            A general understanding of logic circuit elements  .
+          </li>
+          <li>Good working knowledge of Hardware Design </li>
+          <li>
+            Some programming experience. If you are new to programming, try one of
+            the tutorials linked on the main page about JavaScript.
+          </li>
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="VHDL_and_Verilog">
+      <header> VHDL and Verilog</header>
+      <article>
+        <p>
+            Verilog is a hardware description language introduced in 1984. It is similar to the C language. 
+            It is used to model electronic circuits and systems. It is using many data types that are predefined. 
+            It is easier to learn and people with background knowledge of C do not find any difficulty in learning this language
+            It is a compact language so the programmer has to write fewer lines to execute the task. It is used for verification by the method of simulation for different tasks like fault grading, testability analysis, timing analysis, and logic synthesis. All these electronic systems work is done by writing this language in textual format.
+            It is a weakly typed language. It is a case-sensitive language which means it will treat “bat” and “BAT” as two different words. All the codes in this language start with the word “module” and stop with the word “module” and similar to the C language, the line ends with a semicolon.
+            It developed with time since 1995, now it is merged with the system Verilog. With constant up-gradation, it gets many features but still, it lacks library management. Overall it is convenient for a new generation to use for hardware modeling.
+        </p>
+  
+        <p>
+            VHDL is a short form for Very High-Speed Integrated Circuit Hardware Description Language. It is used to describe hardware and many more like integrated circuits.
+           It is an older language  and it is based on Ada and Pascal languages. Its projects can be used as a multipurpose program as one 
+            program can be used again with some minor changes.
+        </p>
+        <p>
+            VHDL is also a hardware description language which is also known as Very High-Speed Integrated Circuit Hardware Description Language. It is used to model the working of digital systems. It was introduced in the 1980s and was developed by the U.S Department of Defence. Then after 1987, it is standardized by the Institute of Electrical and Electronics Engineers also known as IEEE.
+
+            It is based on Ada and Pascal languages and it also has some extra features that these languages lack. It functions in two modes, the first one is Statement execution in which it evaluates the triggered statements. And the latter one is, Event processing in which it processes the events in the queue.
+            
+            It also has Boolean operators like nor and nand, which helps VHDL to represent operations precisely. It is a case insensitive language that means it treat upper case alphabets and lower case alphabets as the same data and Its projects are portable and multipurpose in many ways.
+            
+            As it is based on Ada and Pascal languages it is more difficult to learn because these languages are not that much popular among programmers. It is a strongly typed language that allows users to create some extra and complex data types.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Hello_world">
+      <header>Hello world</header>
+      <article>
+        To get started with writing VHDL, open the Scratchpad and write your
+        first "Hello world"  VHDL code:
+        <code>
+            entity T01_HelloWorldTb is
+            end entity;
+             
+            architecture sim of T01_HelloWorldTb is
+            begin
+             
+                process is
+                begin
+             
+                    report "Hello World!";
+                    wait;
+             
+                end process;
+             
+            end architecture;
+
+        </code>
+
+      </article>
+    </section>
+    <section class="main-section" id="Variables">
+      <header>Variables</header>
+      <p>
+        Variables in VHDL act similarly to variables in C. Their value is valid at the exact location in the code where the variable 
+        is modified. Therefore, if a signal uses the value of the variable before the assignment, it will have the old variable value. 
+        If a signal uses the value of the variable after the assignment it will have the new variable value.
+      </p>
+      <ul>
+
+            <li> Variables can only be used inside processes </li>
+            <li> Any variable that is created in one process cannot be used in another process </li>
+            <li>  Variables need to be defined after the keyword process but before the keyword begin</li>
+            <li> Variables are assigned using the := assignment symbol</li>
+            <li> Variables can be of any data type</li>
+            <li> Variables can be of any size</li>
+
+
+
+
+        </ul>>
+    </section>
+    <section class="main-section" id="Declaring_Input_and_output">
+      <header>Declaring Input and output</header>
+      <article>
+         There is there ways that we can declare variables in VHDL.:
+        <p>
+          With the keyword IN For example, <code> data_in : IN STD_LOGIC .</code> This syntax
+          can be used to declare Input variables.
+        </p>
+        <p>
+            With the keyword OUT For example, <code> data_in : OUT STD_LOGIC .</code> This syntax
+            can be used to declare output variables.
+        </p>
+        <p>
+            With the keyword INOUT For example, <code> data_in : INOUT STD_LOGIC .</code> This syntax
+            can be used to declare input and output variables.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Variable_scope">
+      <header>Variable scope</header>
+      <article>
+        <p>
+            A variable declaration includes one or more identifiers, a subtype indication and an optional globally static expression defining the initial value for the variable(s). The identifiers specify names for the variables, with one identifier per each variable. 
+            The variable can be declared to be of any type or subtype available, either constrained or unconstrained (Example 1). The initial value of a variable can be assigned by a
+             globally static expression. The expression must reference a value of the same type as the variable itself. If the variable is declared to be of a composite type other than a string, 
+             Bit_Vector or Std_Logic_Vector, then an aggregate must be used (see Example 2).
+        </p>
+  
+        <p>
+            The scope of variables is limited to the process or subprogram they are defined in. The only exception to this rule is a shared variable, which may be shared by multiple processes.
+            Variables can be also declared outside of a procedure or process to be shared between many processes. Shared variables may be declared within an architecture, block, generate statement or package. 
+            Declaration of a shared variable must be preceded by the shared keyword (Example 3).
+        </p>
+        <code>type Mem is array (Natural range <>, Natural range <>) of Std_Logic;</code>
+      
+  
+        <code> variable Delay1, Delay2 : Time variable RAM1: Mem (0 to 1023, 0 to 8);   </code>
+      </article>
+    </section>
+    <section class="main-section" id="Global_variables">
+      <header>Global variables</header>
+      <article>
+        <p>
+            In VHDL 93, global variables are allowed.
+
+            These variables are not only visible within a process but within the entire architecture.
+            
+            The problem may occur, that two processes assign a different value to a global variable at the same time. It is not clear then, which of these processes assigns the value to the variable last.
+            
+            This can lead to a non deterministic behavior!
+            
+            In synthesizable VHDL code global variables must not be used.
+        </p>
+  
+        <p>
+            Variables are especially suited for the implementation of algorithms. Usually, the signal values are copied into variables before the algorithm is carried out.
+
+            The result is assigned to a signal again afterwards.
+            
+            Variables keep their value from one process call to the next, i.e. if a variable is read before a value has been assigned, the variable will have to show storage behavior. That means it will have to be synthesized to a latch or flip flop respectively.
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="Constants">
+      <header>Constants</header>
+      <article>
+        <p>
+            Constant is an object whose value cannot be changed once defined for the design. Constants may be explicitly declared or they may be sub-elements of
+             explicitly declared constants,
+             or interface constants. Constants declared in packages may also be deferred constants.
+        </p>
+  
+        <code>constant constant_name : type := value;</code>
+        <p>
+            A constant is an object whose value may never be changed during the simulation process.
+
+            The constant declaration contains one or more identifiers, a subtype indication and an expression which specifies the value of the constant declared in the particular statement. The identifiers specify names of the constants. Each name appearing in the identifier list creates a separate object.
+            
+            The object type in the constant declaration can be of scalar or composite type and it can be constrained. A constant cannot be of the file or access type. If a constant is an array or a record then none of its elements can be of the file or access type.
+        </p>
+  
+        <p>
+            The visibility of constants depends on the place of their declaration. The constants defined in the package can be used by several design units. The constant declaration in the design entity is seen by all the statements of the architecture bodies of this entity. The constants defined in the declaration part of the design unit is seen 
+            in all bodies related to this design, including the process statement. The constant defined in the process can only be used in this process.
+        </p>
+  
+        <p>
+          You cannot declare a constant with the same name as a function or
+          variable in the same scope. For example:
+        </p>
+  
+        <code>
+            type WeekDay is (Mon,Tue,Wed,Thu,Fri,Sat,Sun);
+            constant StartDay : WeekDay := Sat;
+            constant LogicalGND : Bit := '0';
+            constant BusWidth, QueueLength : Integer := 16;
+            constant CLKPeriod : Time := 15 ns;
+            constant MaxSimTime : Time := 200 * CLKPeriod;
+
+
+        </code>
+      </article>
+    </section>
+    <section class="main-section" id="Data_types">
+      <header>Data types</header>
+      <article>
+        <p>Theres is  :</p>
+        <ul>
+          <li>
+            <p> eight data types that are primitives:</p>
+            <ul>
+              <li>BIT</li>
+              <li>BIT_VECTOR </li>
+              <li> STD_LOGIC </li>
+              <li>STD_LOGIC_VECTOR </li>
+              <li> Comparison Operators </li>
+               <li>Logical Operators </li>
+              <li> Shift Operators </li>
+              
+            </ul>
+          </li>
+
+        </ul>
+        <p>
+          The following data types are derived from the primitives:
+        </p>
+      </article>
+    </section>
+    <section class="main-section" id="if...else_statement">
+      <header>if...else statement</header>
+      <article>
+        In the last article, we looked at describing hardware conceptually using processes. What kind of hardware can we describe? What are the limitations? 
+        What kinds of VHDL statement can be used in processes to describe hardware? Well, 
+        we have already seen the use of an if statement to describe a multiplexer, so let's look at the if statement in a bit more detail...
+        <code> 
+            
+            process (sensitivity-list) -- invalid VHDL code!
+            -- process declarative region
+          begin
+            -- statements
+          end process; 
+        
+        
+        </code>
+          
+        The code snippet above outlines a way to describe computational logic using processes. To model a multiplexer, an if statement was used to describe the functionality. 
+        In addition, all of the inputs to the multiplexer were specified in the sensitivity list.
+      
+       
+
+          <code >
+
+            signal sel, a, b : std_logic;
+
+               </code>
+
+               <code> 
+                process (sel, a, b)
+                    begin
+                 if sel = '1' then
+                     f <= a;
+                      else
+                      f <= b;
+                      end if;
+                    end process;
+
+                </code>
+
+                <p> 
+                  <strong>  Sensitivity list </strong>
+                </p>    
+                <p>
+                  It is a fundamental rule of VHDL that only signals (which includes input and buffer ports) must appear in the sensitivity list.
+                </p>
+                <p>
+                  The sensitivity list is a list of signals that are used to determine when the process is executed.
+                  </p>>
+                  <p> 
+                    <strong>  Combinational  list </strong>
+                  </p>
+                  <p> 
+                    It transpires that in order to create VHDL code that can be input to a synthesis tool for the synthesis of combinational logic, 
+                    the requirement for all inputs to the hardware to appear in the sensitivity list is a golden rule.
+                  </p>  
+
+      </article>
+    </section>
+    <section class="main-section" id="while_statement">
+      <header>while statement</header>
+      <article>
+        The while loop repeats the enclosed sequence of statements if the condition tested is true. 
+        The condition is tested before wach iteration. While and infinite loops are supported by some logic synthesis tools,
+       with certain restrictions. The while and infinite loop statements have not changed in VHDL-93.:
+  
+        <code>
+
+            while n <= 31 loop
+            ...some statements here...
+            n := n + 1;
+          end loop;
+
+        </code>
+        The while loop is much like its software cousin, it will keep looping until the top statement is no longer true.
+
+
+        <p>
+            In relation to FPGA digital design, the while loop isn't necessarily equipped to be useful for synthesizable code. While some synthesis tools may support partial use of it, I've never seen it used in my entire professional coding career. And I'll never use it there.
+
+            However, it is useful in simulation. You can come up with all sorts of possibilities to test your code using while loops. Therefore, I would recommend that you never use it in sythesizable code, but use it freely in simulation code.
+        </p>
+  
+        <p>
+          To execute multiple statements, use a block statement ({ ... }) to group
+          those statements.
+        </p>
+  
+        Example:
+  
+        <p> while loop</p>
+  
+        <code>some_simulation_process : process ( some_input ) is
+            variable index : integer := 1 ;
+            begin
+              loop_label : while i <= 66 loop
+                output ( index ) <= input ( index + 7 ) after 35 ns;
+                index := index + 1 ;
+              end loop ;
+            end process some_simulation_process </code>
+
+
+        <p>
+          With each iteration, the loop increments n and adds that value to x.
+          Therefore, x and n take on the following values:
+        </p>
+  
+      </article>
+    </section>
+    <section class="main-section" id="Package_declarations">
+      <header>Package declarations</header>
+      <article>
+        A package in VHDL is a collection of functions, procedures, shared variables, constants, files, aliases, types, subtypes, attributes, and components. A package file is often (but not always) used in conjunction with a unique VHDL library. 
+        Packages are most often used to group together all of the code specific to a Library. Packages can have two parts: a declaration and a body, though the body is not necessarily required. The declarations section contains the prototypes 
+        for the functions and procedures that are defined. The body section contains the actual implementation of the functions and procedures. If you've used C before, the declaration section is similar to a .h file.
+  
+        <ul>
+           <li > Components in a Package File        </li>
+           <li> Constants and Types in a Package File        </li>   
+              <li>  Functions and Procedures in a Package File     </li>
+            
+        </ul>
+      </article>
+    </section>
+    <section class="main-section" id="Reference">
+      <header>Reference</header>
+      <article>
+        <ul>
+          <li>
+            All the documentation in this page is taken from
+            <a href="https://nandland.com/" target="_blank">MDN</a>
+          </li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</html>
