@@ -35,6 +35,7 @@ li.myType {
 .description {
 
  color: #7072AB;
+ text-align: left;
 
 } 
 
@@ -43,5 +44,11 @@ strong {
 }
 
 td {
- align:left;
+ text-align:left;
 }   
+.Table-image{
+
+ width: 6.25rem ;
+  height: 5.375rem;
+
+}
