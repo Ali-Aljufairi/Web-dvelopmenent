@@ -1,0 +1,16 @@
+body
+{
+
+    background-color : yellow   ;
+
+}
+
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0;
+}
+
+a:hover {
+    color :#CA64EA ;
+}

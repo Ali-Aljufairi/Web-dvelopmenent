@@ -1,0 +1,47 @@
+h4 {
+  /* underline  */
+  text-decoration: underline;
+  color: yellow;
+}
+
+ul {
+  list-style-type: square;
+}
+
+li.camp {
+  text-decoration: line-through;
+  list-style-type: upper-alpha;
+  list-style-position: inside;
+}
+
+ a:link.nestlink {
+  color: Yellow;
+}
+
+ a:visited.nestlink {
+  color: green;
+}
+
+li.myType {
+  font-family: "Courier New";
+  font-size: 14px;
+  color: red;
+}
+
+#Frame {
+  border: 1px solid black;
+}
+
+.description {
+
+ color: #7072AB;
+
+} 
+
+strong {
+  color: #877A6F;
+}
+
+td {
+ align:left;
+}   
