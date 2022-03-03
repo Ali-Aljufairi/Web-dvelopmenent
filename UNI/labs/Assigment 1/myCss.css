@@ -1,3 +1,13 @@
+.uob {
+  background-image: url("uob/uob.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 480px 370px;
+  background-size: 10%;
+}
+
+
+
 h4 {
   /* underline  */
   text-decoration: underline;
@@ -14,12 +24,12 @@ li.camp {
   list-style-position: inside;
 }
 
- a:link.nestlink {
-  color: Yellow;
+a:visited {
+  color: green;
 }
 
- a:visited.nestlink {
-  color: green;
+a:link{
+  color: yellow;
 }
 
 li.myType {
@@ -48,7 +58,22 @@ td {
 }   
 .Table-image{
 
- width: 6.25rem ;
+   width: 6.25rem ;
   height: 5.375rem;
+
+}
+
+
+
+.req:after {
+  content:" *";
+  color: red;
+}
+
+ table.form-table   {
+
+margin-left : auto; 
+margin-right : auto;
+
 
 }
