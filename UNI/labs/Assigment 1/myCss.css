@@ -1,3 +1,7 @@
+/* Ali Redha - 20195330 - ITCS330 - Lab 1  */
+
+
+
 .uob {
   background-image: url("uob/uob.jpg");
   background-attachment: fixed;
@@ -69,6 +73,7 @@ td {
   content:" *";
   color: red;
 }
+ 
 
  table.form-table   {
 
@@ -77,3 +82,4 @@ margin-right : auto;
 
 
 }
+
