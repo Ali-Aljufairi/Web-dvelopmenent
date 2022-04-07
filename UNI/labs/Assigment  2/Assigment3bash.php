@@ -1,4 +1,4 @@
- <?php
+<?php
     //  Ali Redha ALi  20195330
 
     $products = array(
