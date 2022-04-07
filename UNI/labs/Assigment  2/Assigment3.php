@@ -1,7 +1,6 @@
  <?php
-//  Ali Redha ALi  20195330
- 
-    // Hello world 
+    //  Ali Redha ALi  20195330
+
     $products = array(
 
         "Playstations" => array(350, 10),
@@ -10,6 +9,7 @@
         "DEll monitor" => array(100, 5),
         "DEll mouse" => array(20, 5),
         "DEll keyboard" => array(10, 5),
+        "DEll printer" => array(50, 5),
         "Glorious keyboard" => array(150, 5),
         "Razer keyboard" => array(50, 5),
         "Razer mouse" => array(30, 5),
@@ -37,9 +37,11 @@
     $max = 0;
     $max_key = "";
     $equalmax = [];
-    $msg = " Most Expensive Product(s) in the shopping cart is ";
-    $msg2 = "with Price of  BD";
-    $msg4 = " Total price for all Product(s) in the shopping cart is BD ";
+
+
+    $msg = "\e[1;35m Most Expensive Product(s) in the shopping cart is \e[0m";
+    $msg2 = "\e[0;32m with Price of BD \e[0m\n";
+    $msg4 = "\e[1;32m Total price for all Product(s) in the shopping cart is BD \e[0m";
     $total = 0;
 
 
@@ -60,21 +62,19 @@
         }
     }
 
-
     foreach ($equalMax as $key => $value) {
-        $msg .=   $key . ",";
+        $msg .=  "\e[0;34m" . $key . "," . "\e[0m";
     }
-
     function Final_msg()
     {
-        global $msg, $msg2, $max, $msg4, $total;
-        echo  $msg . $msg2 . $max;
         echo "\n";
-        echo $msg4 . $total;
+        global $msg, $msg2, $max, $msg4, $total;
+        echo  $msg . $msg2 . "\e[1;31m" .  $max . "\e[0m";
+        echo "\n";
+        echo $msg4 . "\e[1;31m" . $total . "\e[0m";
     }
 
     Final_msg();
-
 
 
     ?>
