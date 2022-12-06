@@ -1,0 +1,60 @@
+header,
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+header {
+  background-color: lightgreen;
+  min-height: 100px;
+}
+  .container {
+    min-height: 500px;
+    background-color:lightblue;
+    display: flex;
+    justify-content: space-between;
+  }
+
+.box {
+  background-color: lightyellow;
+  min-height: 300px;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 150px;
+  height: 70px;
+  border-radius: 10px;
+  box-shadow: 5px 10px 15px red;
+}
+.box p{
+  text-align: center;
+  font-size: 3em;
+  text-shadow: -10px -20px 5px rgba(236, 100, 133, 0.71);
+}
+/* .box p :nth-child(odd){
+  background-color: blue;
+} */
+
+/* make p inside the box blue  */
+/* .box p:nth-child(odd){
+  background-color: blue;
+}
+
+/* make p inside the box red  */
+/* .box p:nth-child(even){
+  background-color: red;
+} */ 
+
+
+/* Make the even text p inside the box blue */
+.container .box:nth-child(even) {
+  color: blue;
+}
+
+/* Make the odd text p inside the box red */
+
+header p {
+  text-align: center;
+  font-size: 4em;
+  color: rgba(187, 42, 223, 086);
+}
